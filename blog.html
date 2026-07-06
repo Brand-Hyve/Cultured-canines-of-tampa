@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="//img1.wsimg.com/isteam/ip/8ce53aad-b9de-4f17-9d1c-6421d30f737f/favicon/9f73b39d-bb3a-4e1f-bf30-5a6fec3e74b2.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Cultured Canines of Tampa - Dog Training Insights</title>
+    <meta name="description" content="Read Heide Maglott's positive reinforcement dog training articles, Kong enrichment tips, leash walking techniques, and behavior science insights." />
+    <script>document.documentElement.classList.add('js')</script>
+  </head>
+  <body>
+    <!-- Background Animation Canvas -->
+    <canvas id="bg-animation-canvas"></canvas>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+      <div class="container navbar-container">
+        <a href="/" class="logo">
+          <img src="https://img1.wsimg.com/isteam/ip/8ce53aad-b9de-4f17-9d1c-6421d30f737f/blob-780e609.png/:/rs=h:80,cg:true,m" alt="Cultured Canines Logo" style="height: 45px; width: auto; object-fit: contain;" />
+          <span>Cultured Canines</span>
+        </a>
+        
+        <button class="hamburger" aria-label="Toggle Navigation">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/services.html" class="nav-link">Services</a></li>
+          <li><a href="/blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="/trusted-professionals.html" class="nav-link">Trusted Pros</a></li>
+          <li><a href="/contact.html" class="nav-cta">Book Consultation</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Blog Header -->
+    <section class="section" style="padding-top: calc(var(--header-height) + 4rem); padding-bottom: 50px;">
+      <div class="container">
+        <div class="section-header animate-on-scroll" style="margin-bottom: 20px;">
+          <div class="badge-banner">Articles & Behavior Insights</div>
+          <h2>The Cultured Canines Blog</h2>
+          <p class="lead">Insights, tips, and science-based guidance to help you understand your dog, improve daily communication, and make training a joy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Directory -->
+    <section class="section section-alt" style="padding-top: 50px;">
+      <div class="container">
+        <!-- Tag Filter -->
+        <div class="blog-filters animate-on-scroll">
+          <button class="tab-btn active" style="padding: 8px 20px;">All Posts</button>
+          <button class="tab-btn" style="padding: 8px 20px;">Positive Training</button>
+          <button class="tab-btn" style="padding: 8px 20px;">Enrichment</button>
+          <button class="tab-btn" style="padding: 8px 20px;">Leash Manners</button>
+        </div>
+
+        <div class="blog-grid animate-on-scroll animate-delay-1">
+          <!-- Post 1 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <span style="font-size: 4rem;">🤝</span>
+              <span class="blog-category-tag">Positive Training</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-date">March 12, 2026 • By Heide Maglott</div>
+              <h3 class="blog-card-title"><a href="#" data-open-modal="post-modal-1">The Power of Positive Reinforcement</a></h3>
+              <p class="blog-card-excerpt">Positive reinforcement dog training is a powerful approach that not only teaches dogs desirable behaviors but also fosters a deep and lasting bond between dogs and owners. Here's why it is so crucial...</p>
+              <a href="#" class="card-link" data-open-modal="post-modal-1">
+                <span>Read Full Article</span>
+                <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12 12.85 3.85l-1.42 1.42L16.86 11H5v2z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <span style="font-size: 4rem;">🍖</span>
+              <span class="blog-category-tag">Enrichment</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-date">February 24, 2026 • By Heide Maglott</div>
+              <h3 class="blog-card-title"><a href="#" data-open-modal="post-modal-2">The Ultimate Kong Feeding Guide</a></h3>
+              <p class="blog-card-excerpt">Turn every meal into a moment of mental stimulation, calm, and connection. Safely using and filling a Kong can reduce boredom, ease separation anxiety, and keep your dog joyfully engaged...</p>
+              <a href="#" class="card-link" data-open-modal="post-modal-2">
+                <span>Read Full Article</span>
+                <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12 12.85 3.85l-1.42 1.42L16.86 11H5v2z"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="blog-card">
+            <div class="blog-image">
+              <span style="font-size: 4rem;">🧠</span>
+              <span class="blog-category-tag">Positive Training</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-date">January 15, 2026 • By Heide Maglott</div>
+              <h3 class="blog-card-title"><a href="#" data-open-modal="post-modal-3">Why Force-Free: The Science of Positive Methods</a></h3>
+              <p class="blog-card-excerpt">We proudly follow the guiding philosophy of "No Pain, No Force, No Fear." Let's look at what the veterinary and clinical science shows about how dogs learn and why intimidation leads to regression...</p>
+              <a href="#" class="card-link" data-open-modal="post-modal-3">
+                <span>Read Full Article</span>
+                <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12 12.85 3.85l-1.42 1.42L16.86 11H5v2z"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <a href="/" class="footer-logo">
+            <img src="https://img1.wsimg.com/isteam/ip/8ce53aad-b9de-4f17-9d1c-6421d30f737f/blob-780e609.png/:/rs=h:80,cg:true,m" alt="Cultured Canines Logo" style="height: 45px; width: auto; object-fit: contain; margin-right: 10px;" />
+            <span>Cultured Canines</span>
+          </a>
+          <p class="footer-desc">Providing compassionate, force-free, positive reinforcement training methods to help dogs and their humans thrive together across the Greater Tampa Bay Area.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/pawzercisedogwalkers" class="social-btn" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/132508323282331" class="social-btn" target="_blank" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.778h-2.955v-3.437h2.955v-2.538c0-2.925 1.787-4.516 4.396-4.516 1.25 0 2.325.093 2.637.135v3.056h-1.809c-1.419 0-1.693.675-1.693 1.662v2.179h3.385l-.441 3.437h-2.944v8.778h6.03c.733 0 1.325-.593 1.325-1.324v-21.35c0-.732-.592-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@culturedcaninesoftampa" class="social-btn" target="_blank" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.53-4.09-1.35-.11-.07-.22-.17-.36-.28v6.52c-.08 1.81-.59 3.64-1.72 5.02-1.36 1.65-3.5 2.61-5.63 2.62-2.3 0-4.63-.99-5.96-2.85-1.47-2.02-1.74-4.83-.75-7.1 1.01-2.31 3.42-3.86 5.92-3.88.08 0 .15 0 .23.01v4.05c-1.28.08-2.61.85-3.11 2.05-.62 1.48-.1 3.32 1.18 4.27 1.05.77 2.5.76 3.59-.02.9-.65 1.35-1.77 1.35-2.88V.02z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Programs</h3>
+          <ul class="footer-links">
+            <li><a href="/services.html#private">One-on-One training</a></li>
+            <li><a href="/services.html#day">In Home Day Training</a></li>
+            <li><a href="/services.html#sanctuary">Sanctuary Sessions</a></li>
+            <li><a href="/services.html#pack-walks">Guided Pack Walks</a></li>
+            <li><a href="/services.html#virtual">Virtual Workshops</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact & Info</h3>
+          <div class="footer-contact">
+            <p><strong>Location:</strong> Tampa, Florida</p>
+            <p><strong>Phone:</strong> <a href="tel:8137338827" style="color: var(--accent); font-weight: 700; text-decoration: none;">813-733-8827</a></p>
+            <p><strong>Office Hours:</strong><br>Mon – Fri: 9:00 AM – 5:00 PM<br>Sat: 10:00 AM – 4:00 PM<br>Sun: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <div>
+          &copy; 2026 Cultured Canines of Tampa. All Rights Reserved.
+        </div>
+        <div>
+          <a href="#" data-open-modal="kong-modal">Kong Guide</a> | 
+          <a href="https://pocketsuite.io/book/cultured-canines-of-tampa" target="_blank">Book Online</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Booking Widget -->
+    <div class="booking-widget">
+      <button class="booking-btn" aria-label="Book appointment">
+        <svg viewBox="0 0 24 24">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm-7-7h5v5h-5z"/>
+        </svg>
+      </button>
+      <div class="booking-menu">
+        <h4 style="padding: 10px 12px 5px; color: var(--primary); font-family: var(--font-heading); font-size: 1.1rem;">Quick Booking</h4>
+        <a href="https://pocketsuite.io/book/cultured-canines-of-tampa/item/private-121-programs-free-phone-consultation" target="_blank" class="booking-item">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <span>Free 30-Min Phone Call</span>
+        </a>
+        <a href="https://pocketsuite.io/book/cultured-canines-of-tampa" target="_blank" class="booking-item">
+          <svg viewBox="0 0 24 24"><path d="M14 10H2v2h12v-2zm0-4H2v2h12V6zm4 8v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM2 16h8v-2H2v2z"/></svg>
+          <span>Book Training Program</span>
+        </a>
+        <a href="/contact.html" class="booking-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <span>Send Heide a Message</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Article Modals -->
+    <!-- Post Modal 1 -->
+    <div class="modal" id="post-modal-1">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
+        <div class="modal-header">
+          <h3 style="margin-bottom: 0;">The Power of Positive Reinforcement</h3>
+          <button class="modal-close" data-close-modal aria-label="Close modal">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body" style="line-height: 1.7; font-size: 1.05rem;">
+          <p style="color: var(--secondary); font-weight: 700; font-size: 0.9rem; margin-bottom: 20px;">PUBLISHED ON MARCH 12, 2026 • BY HEIDE MAGLOTT</p>
+          
+          <p>Positive reinforcement dog training is a powerful approach that not only teaches dogs desirable behaviors but also fosters a deep and lasting bond between dogs and their owners. This training method, which rewards dogs for good behavior rather than punishing them for mistakes, is based on the simple principle that dogs are more likely to repeat behaviors that are followed by positive outcomes. Here's why positive reinforcement is so crucial for a healthy, happy relationship with your dog.</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">1. Builds Trust and Confidence</h4>
+          <p>When you use positive reinforcement, your dog learns to trust you. This trust is essential for a strong, loving relationship. By consistently rewarding good behavior with treats, praise, or play, your dog associates you with positive experiences. This creates a safe environment where your dog feels secure, leading to a more confident and relaxed pet.</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">2. Enhances Communication</h4>
+          <p>Positive reinforcement helps improve communication between you and your dog. Dogs thrive on clear, consistent signals, and when they understand what earns them a reward, they're more likely to repeat those behaviors. This mutual understanding reduces frustration on both sides and helps your dog learn commands more quickly and accurately.</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">3. Promotes a Positive Learning Environment</h4>
+          <p>We do not use prong collars, shock collars, or choker collars in positive reinforcement training. Instead, we focus on creating a stress-free and enjoyable environment for your dog. This approach encourages your dog to think, problem-solve, and engage actively in the learning process, which leads to better long-term results.</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">4. Strengthens the Human-Animal Bond</h4>
+          <p>Perhaps the most significant benefit of positive reinforcement is the way it strengthens the bond between you and your dog. Every time you reward your dog for good behavior, you're reinforcing the connection you share. This bond is built on mutual respect, understanding, and love, creating a loyal and affectionate relationship that will last a lifetime.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post Modal 2 -->
+    <div class="modal" id="post-modal-2">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
+        <div class="modal-header">
+          <h3 style="margin-bottom: 0;">The Ultimate Kong Feeding Guide</h3>
+          <button class="modal-close" data-close-modal aria-label="Close modal">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body" style="line-height: 1.7; font-size: 1.05rem;">
+          <p style="color: var(--secondary); font-weight: 700; font-size: 0.9rem; margin-bottom: 20px;">PUBLISHED ON FEBRUARY 24, 2026 • BY HEIDE MAGLOTT</p>
+          
+          <p>Did you know that feeding your dog out of a bowl is a missed opportunity for mental enrichment? In the wild, dogs are natural scavengers and hunters who spend a significant portion of their day seeking out food. Bowl feeding takes away this natural behavior, which can contribute to boredom, pacing, and hyperactive behaviors at home.</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">Why Kong Enrichment Works</h4>
+          <p>A stuffed Kong toy acts as a sensory and cognitive puzzle. Licking is a naturally self-soothing behavior for dogs; it triggers the release of calming hormones like endorphins in their brains, lowering their heart rate and inducing a relaxed state. Using stuffed Kongs for meals or long-lasting snacks is one of the easiest ways to help an anxious, hyperactive, or reactive dog learn how to settle.</p>
+
+          <h4 style="margin-top: 24px; color: var(--primary);">How to Stuff a Kong: The Progression</h4>
+          <p>If your dog has never used a Kong, you must start easy. If it is too hard, they will get frustrated and give up. Follow Heide's 3-level progression:</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Level 1 (Beginner):</strong> Loose kibble and small treats that fall out easily. Smear a tiny bit of peanut butter or wet food around the opening to hook their interest.</li>
+            <li><strong>Level 2 (Intermediate):</strong> Mix kibble with wet food, canned pumpkin (plain), or unsweetened applesauce. Pack it loosely into the Kong. They have to lick to get it out, but it comes out easily.</li>
+            <li><strong>Level 3 (Advanced):</strong> Freeze the stuffed Kong. A frozen Kong can take 30 to 45 minutes to finish, providing incredible mental fatigue and a deep calming effect.</li>
+          </ul>
+
+          <p style="margin-top: 20px;">For more ideas, recipes, and safe ingredients, download our full <strong>Kong Feeding Guide</strong> by requesting it via the newsletter form at the bottom of the home page or in the footer!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post Modal 3 -->
+    <div class="modal" id="post-modal-3">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
+        <div class="modal-header">
+          <h3 style="margin-bottom: 0;">Why Force-Free: The Science of Positive Methods</h3>
+          <button class="modal-close" data-close-modal aria-label="Close modal">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body" style="line-height: 1.7; font-size: 1.05rem;">
+          <p style="color: var(--secondary); font-weight: 700; font-size: 0.9rem; margin-bottom: 20px;">PUBLISHED ON JANUARY 15, 2026 • BY HEIDE MAGLOTT</p>
+          
+          <p>In modern dog training, there is an ongoing shift away from correction-based tools (like prong collars, shock/e-collars, and choke chains) toward force-free, positive reinforcement methods. At Cultured Canines of Tampa, our philosophy is anchored firmly in "No Pain, No Force, No Fear." But why? Is it just about being nice, or is it about science?</p>
+          
+          <h4 style="margin-top: 24px; color: var(--primary);">The Risk of Punishment-Based Methods</h4>
+          <p>Punishment-based training relies on introducing an "aversive stimulus" (discomfort, pain, or startle) to suppress a behavior. While this can stop a behavior in the immediate second, science tells us it carries severe side effects:</p>
+          <ul style="margin-left: 20px; margin-top: 10px;">
+            <li><strong>Association Fallout:</strong> A dog does not always associate the shock or pain with the behavior you are correcting. Instead, they associate it with whatever they are looking at in that moment—such as an approaching child, another dog, or you. This can turn a dog who pulls out of excitement into a dog who lunges out of fear and aggression.</li>
+            <li><strong>Learned Helplessness:</strong> When a dog is constantly corrected, they may shut down completely. They stop trying new things and stop engaging, appearing "well-behaved" when they are actually suffering from extreme stress and depression.</li>
+          </ul>
+
+          <h4 style="margin-top: 24px; color: var(--primary);">Trust & Cooperative Learning</h4>
+          <p>As Dr. Soraya V. Juarbe-Diaz, DVM, DACVB, CAAB states: <em>“Using punishment to stop behaviors is not new. Notice I say 'stop' rather than 'teach' – I can stop any behavior, but I am more interested in teaching my students to choose the behavior I want because they can trust me, because I do not hurt them and they are safe with me, and because the outcome is something they enjoy.”</em></p>
+          
+          <p style="margin-top: 20px;">By using rewards, we create cooperative learners who actively try to figure out what we want from them. This results in reliable behaviors, a happier dog, and a stress-free home.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Modal Kong Guide -->
+    <div class="modal" id="kong-modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 style="margin-bottom: 0;">Get Your Free Kong Guide</h3>
+          <button class="modal-close" data-close-modal aria-label="Close modal">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Turn mealtime into mental enrichment, reduce anxiety, and ease boredom. Enter your details below and we will email you Heide's detailed Kong Enrichment Guide immediately.</p>
+          <form id="lead-form-modal">
+            <div class="form-group">
+              <label for="modal-name">Your Name *</label>
+              <input type="text" id="modal-name" class="form-input" required placeholder="Jane Doe" style="width:100%" />
+            </div>
+            <div class="form-group">
+              <label for="modal-email">Your Email *</label>
+              <input type="email" id="modal-email" class="form-input" required placeholder="jane@example.com" style="width:100%" />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; margin-top: 10px;">Send Me the Guide</button>
+            <p style="font-size: 0.75rem; text-align: center; margin-top: 12px; margin-bottom: 0; color: var(--text-muted);">By submitting, you agree to receive training insights and promotional updates. You can unsubscribe at any time.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
