@@ -34,7 +34,7 @@
   
   /* Layout */
   --container-width: 1200px;
-  --header-height: 80px;
+  --header-height: 150px;
 }
 
 /* Base Styles */
@@ -152,15 +152,18 @@ p {
 
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 8px;
+  position: relative;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 900;
@@ -170,7 +173,7 @@ p {
 }
 
 .logo img {
-  height: 65px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -191,6 +194,7 @@ p {
 .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 32px;
   list-style: none;
 }
@@ -1645,6 +1649,9 @@ p {
   .contact-form {
     padding: 30px;
   }
+  :root {
+    --header-height: 120px;
+  }
   .navbar-container {
     padding: 0 10px;
   }
@@ -1667,6 +1674,9 @@ p {
   }
   .hamburger {
     display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
 }
 
