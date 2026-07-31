@@ -169,6 +169,13 @@ p {
   transition: var(--transition-fast);
 }
 
+.logo img {
+  height: 65px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .logo svg {
   fill: var(--primary);
   width: 32px;
@@ -1421,13 +1428,13 @@ p {
   right: 0;
   background-color: var(--white);
   border-radius: 20px;
-  padding: 16px;
+  padding: 10px;
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-light);
   display: none;
   flex-direction: column;
-  gap: 8px;
-  width: 280px;
+  gap: 0;
+  width: 260px;
   animation: slideUpWidget 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
