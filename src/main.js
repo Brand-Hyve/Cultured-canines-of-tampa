@@ -444,46 +444,62 @@ function initBookingWidget() {
 }
 
 /* ==========================================================================
-   Forms & Lead Generation
+   Forms & Lead Generation — Kong Guide
+   Submits to Google Forms (no-cors), then reveals the PDF link inline.
    ========================================================================== */
 function initForms() {
-  const forms = document.querySelectorAll('form');
-  
-  forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+  const FORM_ACTION = 'https://docs.google.com/forms/d/12bPLWHO2aADzpnnpfIHPDjc4YNsY4Y8NTtWZwX8YEJk/formResponse';
+  const ENTRY_NAME  = 'entry.649581393';
+  const ENTRY_EMAIL = 'entry.963881499';
+  const PDF_URL     = 'https://assets.cdn.filesafe.space/mzfO1myzszedY3BUAzuB/media/6a6e7311a4c8a1a2c3215cca.pdf';
+
+  const kongForms = document.querySelectorAll('#lead-form-home, #lead-form-modal');
+
+  kongForms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      const submitBtn = form.querySelector('[type="submit"]');
-      const originalText = submitBtn ? submitBtn.innerText : 'Submit';
-      
+
+      const nameInput  = form.querySelector('input[type="text"]');
+      const emailInput = form.querySelector('input[type="email"]');
+      const submitBtn  = form.querySelector('[type="submit"]');
+
+      if (!nameInput || !emailInput) return;
+
+      const name  = nameInput.value.trim();
+      const email = emailInput.value.trim();
+
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerText = 'Sending...';
       }
 
-      // Simulate network request
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerText = 'Thank you! ✓';
-        }
-        
-        // Show success alert/modal
-        alert('Thank you! Heide will contact you shortly to confirm your request.');
-        
-        // Reset form
-        form.reset();
-        
-        // If modal form, close after a delay
-        const modal = form.closest('.modal');
-        if (modal) {
-          setTimeout(() => {
-            modal.classList.remove('active');
-            document.body.classList.remove('disable-scroll');
-            if (submitBtn) submitBtn.innerText = originalText;
-          }, 1500);
-        }
-      }, 1000);
+      // POST to Google Forms — mode: no-cors means we can't read the response
+      // but the data goes through reliably.
+      const formData = new FormData();
+      formData.append(ENTRY_NAME, name);
+      formData.append(ENTRY_EMAIL, email);
+
+      try {
+        await fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData });
+      } catch (_) {
+        // Expected — no-cors fetch always throws from JS side; submission still lands.
+      }
+
+      // Replace the form with success state + PDF link
+      const successHTML = `
+        <div style="text-align: center; padding: 16px 0 8px;">
+          <div style="font-size: 2.4rem; margin-bottom: 12px;">🐾</div>
+          <h3 style="margin-bottom: 8px;">You're all set, ${name.split(' ')[0]}!</h3>
+          <p style="margin-bottom: 24px; color: var(--text-muted);">Here's your free Kong Enrichment Guide — click below to open it:</p>
+          <a href="${PDF_URL}" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 14px 36px; font-size: 1rem; display: inline-block;">
+            📄 Open Your Kong Guide
+          </a>
+          <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-muted);">Happy training! 🐶<br>— Heide at Cultured Canines of Tampa</p>
+        </div>`;
+
+      const successEl = document.createElement('div');
+      successEl.innerHTML = successHTML;
+      form.parentNode.replaceChild(successEl, form);
     });
   });
 }
