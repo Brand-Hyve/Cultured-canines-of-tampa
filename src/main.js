@@ -445,18 +445,58 @@ function initBookingWidget() {
 
 /* ==========================================================================
    Forms & Lead Generation — Kong Guide
-   Submits to Google Forms (no-cors), then reveals the PDF link inline.
+   Uses a hidden iframe to POST to Google Forms (reliable cross-origin method),
+   then reveals the PDF link inline without any page navigation.
    ========================================================================== */
 function initForms() {
-  const FORM_ACTION = 'https://docs.google.com/forms/d/12bPLWHO2aADzpnnpfIHPDjc4YNsY4Y8NTtWZwX8YEJk/formResponse';
+  const FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSdNihjE1-DNlJGYwjE4EPLsPiqklKzCQUbj_DB8STQRH_-hgg/formResponse';
   const ENTRY_NAME  = 'entry.649581393';
   const ENTRY_EMAIL = 'entry.963881499';
   const PDF_URL     = 'https://assets.cdn.filesafe.space/mzfO1myzszedY3BUAzuB/media/6a6e7311a4c8a1a2c3215cca.pdf';
 
+  function submitToGoogleForms(name, email) {
+    // Build a hidden form that targets a hidden iframe.
+    // This is the only cross-browser reliable way to POST to Google Forms
+    // from a third-party site without CORS issues.
+    const iframeName = 'kong-submit-target';
+
+    // Reuse or create iframe
+    let iframe = document.getElementById(iframeName);
+    if (!iframe) {
+      iframe = document.createElement('iframe');
+      iframe.id   = iframeName;
+      iframe.name = iframeName;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+    }
+
+    // Build a temporary hidden form
+    const hiddenForm = document.createElement('form');
+    hiddenForm.method = 'POST';
+    hiddenForm.action = FORM_ACTION;
+    hiddenForm.target = iframeName;
+    hiddenForm.style.display = 'none';
+
+    const fields = { [ENTRY_NAME]: name, [ENTRY_EMAIL]: email };
+    for (const [key, val] of Object.entries(fields)) {
+      const input = document.createElement('input');
+      input.type  = 'hidden';
+      input.name  = key;
+      input.value = val;
+      hiddenForm.appendChild(input);
+    }
+
+    document.body.appendChild(hiddenForm);
+    hiddenForm.submit();
+
+    // Clean up the hidden form after submit (iframe stays for reuse)
+    setTimeout(() => hiddenForm.remove(), 2000);
+  }
+
   const kongForms = document.querySelectorAll('#lead-form-home, #lead-form-modal');
 
   kongForms.forEach(form => {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const nameInput  = form.querySelector('input[type="text"]');
@@ -473,23 +513,15 @@ function initForms() {
         submitBtn.innerText = 'Sending...';
       }
 
-      // POST to Google Forms — mode: no-cors means we can't read the response
-      // but the data goes through reliably.
-      const formData = new FormData();
-      formData.append(ENTRY_NAME, name);
-      formData.append(ENTRY_EMAIL, email);
+      // Fire-and-forget submission via hidden iframe
+      submitToGoogleForms(name, email);
 
-      try {
-        await fetch(FORM_ACTION, { method: 'POST', mode: 'no-cors', body: formData });
-      } catch (_) {
-        // Expected — no-cors fetch always throws from JS side; submission still lands.
-      }
-
-      // Replace the form with success state + PDF link
+      // Show inline success + PDF link immediately
+      const firstName = name.split(' ')[0];
       const successHTML = `
         <div style="text-align: center; padding: 16px 0 8px;">
           <div style="font-size: 2.4rem; margin-bottom: 12px;">🐾</div>
-          <h3 style="margin-bottom: 8px;">You're all set, ${name.split(' ')[0]}!</h3>
+          <h3 style="margin-bottom: 8px;">You're all set, ${firstName}!</h3>
           <p style="margin-bottom: 24px; color: var(--text-muted);">Here's your free Kong Enrichment Guide — click below to open it:</p>
           <a href="${PDF_URL}" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 14px 36px; font-size: 1rem; display: inline-block;">
             📄 Open Your Kong Guide
